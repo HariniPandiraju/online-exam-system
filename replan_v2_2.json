@@ -1,0 +1,29 @@
+[
+  {
+    "step": "FIX ExamCreator component and its test to ensure addQuestionToExam API is reliably called after exam creation, even during test execution",
+    "sub_steps": [
+      "Review ExamCreator.js to locate the logic flow after handleCreateExam, especially setExamId, setAddQuestionPending, and the effect or callback that triggers the addQuestionToExam API call.",
+      "Synchronize or refactor the state update (prefer setExamId in a functional updater or useEffect with correct dependencies) so that once the examId is set and addQuestionPending is true, the addQuestionToExam API call is always performed.",
+      "For ExamCreator.test.js, ensure that after submitting the form with valid data, the test properly advances time (if using async code or setTimeout) and waits for the mock addQuestionToExam to be called using waitFor, act, or async/await as applicable.",
+      "Verify with a minimal local manual run or updated test that upon creating an exam and adding the first question, the addQuestionToExam API is always called and all state changes succeed in expected order."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamCreator.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamCreator.test.js"
+    ],
+    "description": "Adjust the state update and API call sequence in ExamCreator so the addQuestionToExam API is called after exam creation, even in the async/reactive test environment. Update test to properly observe and wait for API invocation."
+  },
+  {
+    "step": "Lint, build, and test the frontend React application",
+    "sub_steps": [
+      "Run npm install to install all frontend dependencies.",
+      "Run npm run build to ensure a successful build with no errors.",
+      "Run npx eslint src/ --fix to auto-correct linting issues and enforce coding standards.",
+      "Run npm run test:ci to execute all Jest tests and verify correct behavior."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [],
+    "description": "This step validates the entire React frontend, confirming build quality and full test coverage for all implemented features."
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "step": "Breakdown Step 9 (Implement major React components) into smaller focused component implementation steps",
+    "sub_steps": [
+      "Instead of implementing all major components and tests in one step, handle them one by one for speed and error isolation.",
+      "Start with TeacherDashboard.js and TeacherDashboard.test.js.",
+      "Then implement ExamCreator.js and ExamCreator.test.js.",
+      "Next, implement StudentExamList.js and StudentExamList.test.js.",
+      "Proceed with ExamInterface.js and ExamInterface.test.js.",
+      "Finally, implement ExamResults.js and ExamResults.test.js.",
+      "Integrate routing and update App.js after component implementation.",
+      "Apply the required CSS changes progressively."
+    ],
+    "files_to_add": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/TeacherDashboard.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/TeacherDashboard.test.js"
+    ],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/App.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/App.css"
+    ],
+    "description": "Break the all-in-one component implementation step into sequential, manageable chunks for each major component and its test. This optimized approach shortens individual steps, targets errors earlier, reduces timeouts, and aligns with best practices for agent-based planning."
+  },
+  {
+    "step": "Implement and align Jest test cases for all frontend components",
+    "sub_steps": [
+      "TeacherDashboard.test.js: teacherDashboardRendering - mock exam array, assert all UI elements, button presence.",
+      "ExamCreator.test.js: examCreatorValidation - form validation errors on empty/invalid submission, then success.",
+      "StudentExamList.test.js/ExamInterface.test.js: studentExamInterfaceNavigation - mock navigation between questions, simulate answers, assert navigation UI.",
+      "ExamResults.test.js: examResultsDisplay - show correct result summary, answer correctness, marks earned.",
+      "ExamInterface.test.js or relevant: apiIntegrationExamSubmission - mock exam submission API, check successful response and UI update.",
+      "Each test must use exact selectors, error messages and behaviors as described; use jest.fn(), fetch mocks, and no manual cleanup() calls.",
+      "Verify mocking and assertion strategies cover both positive and negative flows appropriately."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/TeacherDashboard.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamCreator.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/StudentExamList.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamInterface.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamResults.test.js"
+    ],
+    "description": "Implements all required Jest tests side-by-side with their components, matching specified behaviors and ensuring complete coverage with correct mocking patterns."
+  },
+  {
+    "step": "Lint, build, and test the frontend React application",
+    "sub_steps": [
+      "Run npm install to install all frontend dependencies.",
+      "Run npm run build to ensure a successful build with no errors.",
+      "Run npx eslint src/ --fix to auto-correct linting issues and enforce coding standards.",
+      "Run npm run test:ci to execute all Jest tests and verify correct behavior."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [],
+    "description": "This step validates the entire React frontend, confirming build quality and full test coverage for all implemented features."
+  }
+]

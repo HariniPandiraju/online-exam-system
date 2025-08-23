@@ -1,0 +1,160 @@
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.form-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #394575;
+}
+
+.form-subtitle {
+    margin-bottom: 2rem;
+    color: #718096;
+    font-size: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    color: #4a5568;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+    border-color: #f56565;
+    background-color: #fff5f5;
+}
+
+.form-error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.form-help {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-top: 2px;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.9rem 2.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    border: 2px solid #667eea;
+    color: #667eea;
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-outline {
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+.btn-success {
+    background: #38a169;
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #2f855a;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.link-button:hover {
+    color: #2c3e50;
+}
+
+/* Required Asterisk */
+.required-asterisk {
+    color: #e53e3e;
+}

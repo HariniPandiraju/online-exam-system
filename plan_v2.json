@@ -1,0 +1,173 @@
+[
+  {
+    "step": "Read and analyze backend dependencies from pom.xml and project structure",
+    "sub_steps": [
+      "Open /home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/pom.xml to review dependencies.",
+      "Check for presence of Spring Boot starter (web, data-jpa, validation), MySQL, JUnit and related configurations.",
+      "Confirm appropriate Java version (17) and other setup instructions as per boilerplate."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/pom.xml",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/resources/application.properties"
+    ],
+    "description": "This step ensures you understand the backend setup, all dependencies, database configuration, and prepares for entity and API layer implementation."
+  },
+  {
+    "step": "Implement backend entities, repositories, services, and controllers for Exam, Question, StudentExam, StudentAnswer; enforce validation and relationships as per requirements",
+    "sub_steps": [
+      "Create Entity classes for Exam, Question, StudentExam, StudentAnswer with all validations and relationships.",
+      "Create corresponding Repository interfaces for each entity.",
+      "Implement Service layer classes for each major feature: exam management (teacher), exam participation (student), auto-evaluation logic.",
+      "Create REST Controllers for teacher endpoints (exam creation, question addition, list/activate/deactivate) and student endpoints (exam listing, start, answer submission, completion, results).",
+      "Enforce input validation (annotations and in controller/service as needed), and exception handling for error scenarios.",
+      "Add CORS configuration to allow React frontend access."
+    ],
+    "files_to_add": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/model/Exam.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/model/Question.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/model/StudentExam.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/model/StudentAnswer.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/repository/ExamRepository.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/repository/QuestionRepository.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/repository/StudentExamRepository.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/repository/StudentAnswerRepository.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/service/ExamService.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/service/StudentExamService.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/controller/TeacherController.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/controller/StudentController.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/config/CorsConfig.java"
+    ],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/main/java/com/examly/springapp/OnlineExamSystemApplication.java"
+    ],
+    "description": "Implements all backend domain logic, validation, and REST endpoint structure for teacher and student flows."
+  },
+  {
+    "step": "Implement backend JUnit test cases for all features",
+    "sub_steps": [
+      "Map all required test case scenarios from the test JSON into actual class and method tests.",
+      "For each test case, mock necessary service or repository layers using Mockito.",
+      "Write integration and unit tests for critical flow points.",
+      "Tests to implement:",
+      "- createExamTest (creation endpoint, validation)",
+      "- addQuestionToExamTest (add question endpoint, association/validation)",
+      "- startAndCompleteExamTest (student full exam-taking flow)",
+      "- examActivationTest (activate/deactivate and filtering)",
+      "- validationConstraintsTest (all validation and error scenarios)"
+    ],
+    "files_to_add": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/test/java/com/examly/springapp/controller/TeacherControllerTest.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/test/java/com/examly/springapp/controller/StudentControllerTest.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/test/java/com/examly/springapp/service/ExamServiceTest.java",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/test/java/com/examly/springapp/service/StudentExamServiceTest.java"
+    ],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/springapp/src/test/java/com/examly/springapp/OnlineExamSystemApplicationTests.java"
+    ],
+    "description": "Covers every feature and validation described in the test cases, providing coverage for both controller input, service logic, and error cases."
+  },
+  {
+    "step": "Compile, install, and run backend tests",
+    "sub_steps": [
+      "Run mvn clean compile to check for compilation errors.",
+      "Run mvn clean install to build the project.",
+      "Run mvn test to execute and verify all JUnit tests pass."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [],
+    "description": "Ensures all backend code is valid and works as expected before frontend integration."
+  },
+  {
+    "step": "Read and analyze frontend dependencies and structure from package.json",
+    "sub_steps": [
+      "Open /home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/package.json to review React version and other library dependencies.",
+      "Review the existing src/ directory structure and default files.",
+      "Confirm presence of Jest, React Testing Library, and review CSS organization."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/package.json"
+    ],
+    "description": "This establishes a baseline for implementing frontend components, utilities, and app structure."
+  },
+  {
+    "step": "Implement utility functions, constants, and API service layer for frontend",
+    "sub_steps": [
+      "Create utils/api.js for all backend API calls and error handling (centralized).",
+      "Create utils/constants.js to store URLs and enumerations such as status mappings.",
+      "Implement form validation helpers in utils/validation.js as needed.",
+      "Ensure API URLs use http://localhost:8080 and support all REST endpoints."
+    ],
+    "files_to_add": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/utils/api.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/utils/constants.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/utils/validation.js"
+    ],
+    "files_to_edit": [],
+    "description": "Allows for modular, maintainable frontend logic, consolidating API access and field validation for use in all components."
+  },
+  {
+    "step": "Implement major React components: TeacherDashboard, ExamCreator, StudentExamList, ExamInterface, ExamResults with UI and state management",
+    "sub_steps": [
+      "For each component, create the main file and a corresponding .test.js file.",
+      "TeacherDashboard: List exams, activate/deactivate, create button, edit action.",
+      "ExamCreator: Exam creation form, question-adding UI, form validation, save.",
+      "StudentExamList: List available exams, start exam action.",
+      "ExamInterface: Step-through question UI, answer selection, timer, navigator, exam submission.",
+      "ExamResults: Results summary, question-by-question breakdown.",
+      "Create routing in App.js (using React Router) for all specified paths and navigation between components.",
+      "Implement CSS modules or update App.css as per required design/styling guidelines (including variables, button classes, spacing, error, loading states, etc.)."
+    ],
+    "files_to_add": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/TeacherDashboard.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/TeacherDashboard.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamCreator.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamCreator.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/StudentExamList.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/StudentExamList.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamInterface.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamInterface.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamResults.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamResults.test.js"
+    ],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/App.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/App.css"
+    ],
+    "description": "Delivers the main frontend features, interfaces, and specified UI/UX behaviors for both teachers and students."
+  },
+  {
+    "step": "Implement and align Jest test cases for all frontend components",
+    "sub_steps": [
+      "TeacherDashboard.test.js: teacherDashboardRendering - mock exam array, assert all UI elements, button presence.",
+      "ExamCreator.test.js: examCreatorValidation - form validation errors on empty/invalid submission, then success.",
+      "StudentExamList.test.js/ExamInterface.test.js: studentExamInterfaceNavigation - mock navigation between questions, simulate answers, assert navigation UI.",
+      "ExamResults.test.js: examResultsDisplay - show correct result summary, answer correctness, marks earned.",
+      "ExamInterface.test.js or relevant: apiIntegrationExamSubmission - mock exam submission API, check successful response and UI update.",
+      "Each test must use exact selectors, error messages and behaviors as described; use jest.fn(), fetch mocks, and no manual cleanup() calls.",
+      "Verify mocking and assertion strategies cover both positive and negative flows appropriately."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/TeacherDashboard.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamCreator.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/StudentExamList.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamInterface.test.js",
+      "/home/coder/project/workspace/question_generation_service/solutions/6a40c2a0-b5f8-410b-9902-ca6b385ffe42/reactapp/src/components/ExamResults.test.js"
+    ],
+    "description": "Implements all required Jest tests side-by-side with their components, matching specified behaviors and ensuring complete coverage with correct mocking patterns."
+  },
+  {
+    "step": "Lint, build, and test the frontend React application",
+    "sub_steps": [
+      "Run npm install to install all frontend dependencies.",
+      "Run npm run build to ensure a successful build with no errors.",
+      "Run npx eslint src/ --fix to auto-correct linting issues and enforce coding standards.",
+      "Run npm run test:ci to execute all Jest tests and verify correct behavior."
+    ],
+    "files_to_add": [],
+    "files_to_edit": [],
+    "description": "This step validates the entire React frontend, confirming build quality and full test coverage for all implemented features."
+  }
+]
