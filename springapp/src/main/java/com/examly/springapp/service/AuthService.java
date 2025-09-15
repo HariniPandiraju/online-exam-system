@@ -1,7 +1,5 @@
 package com.examly.springapp.service;
 
-
-
 import com.examly.springapp.model.User;
 import com.examly.springapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
